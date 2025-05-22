@@ -279,7 +279,7 @@ void palindromo(){
     cout<<"no es palindromo";
   }
   }
-  
+
 
 int main(){
 

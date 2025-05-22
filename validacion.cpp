@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 void imprimir(int inicio, int fin,int base,string caracter){
   for(int i=1; i<=base; i++){
@@ -20,6 +21,20 @@ void piramide(int N, string caracter){
   int mitad=(base/2)+1;
   imprimir(mitad,mitad,base,caracter);
 }
+void raiz_cuadrada(int decimal){
+
+  if(decimal<0){
+    cout<<sqrt(decimal*-1)<<"i";
+  }
+  else{
+    cout<<sqrt(decimal);
+  
+
+
+
+}
+}
+
 
   
 
@@ -32,6 +47,6 @@ int entero=stoi(argv[1]);
 string caracter=argv[2];
 float flotante=stof(argv[3]);
 piramide(entero,caracter);
-
+raiz_cuadrada(flotante);
 return 0;
 }
