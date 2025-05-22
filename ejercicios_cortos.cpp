@@ -279,9 +279,49 @@ void palindromo(){
     cout<<"no es palindromo";
   }
   }
+  void descender(int n){
+    cout<<n<<endl;
+    if(n>1){
+      descender(n-1);
+    }
+    else{
+      cout<<"conteo terminado"<<endl;
+    }
+  
+  }
+    
+
+  void countdown(){
+    int n;
+    cout<<"ingrese un numero positivo, para hacer conteo";
+    cin>>n;
+    
+  
+    if(n<=0){
+      cout<<"numero fallido";
+    }
+    else{
+      descender(n);
+      
+    
+    }
+    }
+    
+int suma_matriz(int array[],int largo){
+  int suma=0;
+  for(int i=0; i<largo; i++){
+  suma+=array[i];
+  }
+  return suma;
+}
+    
+  
 
 
 int main(){
+  int matriz[7]={3,6,5,8,7,9,0};
+  int tamaño=sizeof(matriz)/sizeof(matriz[0]);
+  cout<<suma_matriz(matriz,tamaño);
 
 return 0;
 }
