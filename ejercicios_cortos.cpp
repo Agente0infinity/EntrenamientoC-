@@ -388,6 +388,15 @@ void generar_primos(){
 
 
 }
+int transformar_decimal(int i,int sistema){
+  
+  
+
+
+
+
+}
+
 
 
 
