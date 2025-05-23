@@ -314,14 +314,85 @@ int suma_matriz(int array[],int largo){
   }
   return suma;
 }
+void fizz_buzz_plus_pluss(){  
+  for(int i=1;i<=100;i++){
+  
+    if((i==50)||(i==30)||(i%10==5||i%10==3)){
+      cout<<"bam"<<endl;
+    }
+    else if(i%3==0 && i%5==0){
+      cout<<"fizzbuzz"<<endl;
     
+   }
+   else if(i%3==0){
+      cout<<"fizz"<<endl;
+   
+   }
+   else if(i%5==0){
+    cout<<"buzz"<<endl;
+   }
+   else{
+  cout<<i<<endl;
+   }
+
+  }
+}
+void factorialn(){
+  int factorial;
+  cout<<"ingrese un numero al que sacarle el factorial: ";
+  cin>>factorial;
+  if(factorial<0){
+  
+    cout<<"ingrese numero positivo";
+    }
+  else if(factorial==0 || factorial==1){
+    cout<<"1";
+    }
+  else{
+    int resultado=factorial;
+    
+    for(int i=factorial-1;i>=2;i--){
+      resultado*=i;
+      
+    }
+    cout<<resultado;
+    }
+  
+  }
+  
+bool validar_primo(int n){
+  if(n==2){
+    return true;
+  }
+  for(int i=2;i<n;i++){
+    if(n%i==0){
+      return false;
+    }
+  
+}
+return true;
+}
+
+void generar_primos(){
+  int numero;
+  cout<<"ingrese un numero";
+  cin>>numero;
+  for(int i=2;i<numero;i++){
+    if(validar_primo(i)){
+      cout<<i<<endl;
+      
+    }
+  
+  }
   
 
 
+}
+
+
+
 int main(){
-  int matriz[7]={3,6,5,8,7,9,0};
-  int tamaño=sizeof(matriz)/sizeof(matriz[0]);
-  cout<<suma_matriz(matriz,tamaño);
+generar_primos();
 
 return 0;
 }
