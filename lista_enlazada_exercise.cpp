@@ -72,16 +72,16 @@ Nodo* aniquilar(Nodo* cabeza, int numero) {
         return nullptr;
     }
     Nodo* actual = cabeza;
-    while (actual->siguiente != nullptr) {
+    while (actual->siguiente!= nullptr) {
         if (actual->siguiente->valor == numero) {
-            Nodo* fatality = actual->siguiente;
-            actual->siguiente = actual->siguiente->siguiente;
+            Nodo* fatality =actual->siguiente;
+            actual->siguiente=actual->siguiente->siguiente;
             delete fatality;
         } else {
             actual = actual->siguiente;
         }
+        
     }
-
     return cabeza;
 }
 
@@ -91,7 +91,7 @@ int main() {
     recorrerNodo(probar);
     Nodo* agregado = agregar_en_orden(probar,15);
     recorrerNodo(agregado);
-    Nodo* muerte=aniquilar(agregado,6);
+    Nodo* muerte=aniquilar(agregado,42);
     recorrerNodo(muerte);
     liberarNodos(muerte);
     
