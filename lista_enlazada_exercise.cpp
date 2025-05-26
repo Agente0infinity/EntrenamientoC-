@@ -8,7 +8,7 @@ struct Nodo {
 };
 
 Nodo* CrearNodoMultiplos(int multiplo, int cantidad) {
-    if (cantidad <= 0) return nullptr; // Manejo de caso inválido
+    if (cantidad <= 0) return nullptr; 
 
     Nodo* cabeza = new Nodo(multiplo);
     Nodo* actual = cabeza;

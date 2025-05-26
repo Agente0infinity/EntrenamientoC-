@@ -38,14 +38,14 @@ void raiz_cuadrada(int decimal){
 
   
 
-int main(int argc,char* argv[]){
-if(argc!=4){
+int main(int argv,char* argc[]){
+if(argv!=4){
   cout<<"se deben ingresar exactamente 3 argumentos";
   return 0;
 }
-int entero=stoi(argv[1]);
-string caracter=argv[2];
-float flotante=stof(argv[3]);
+int entero=stoi(argc[1]);
+string caracter=argc[2];
+float flotante=stof(argc[3]);
 piramide(entero,caracter);
 raiz_cuadrada(flotante);
 return 0;
