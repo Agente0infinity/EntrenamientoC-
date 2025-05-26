@@ -29,14 +29,27 @@ float generar(int rango){
 void agregar_valores(lista_main* &lista,int rango,int cantidad){
   cout<<lista->valor;
   lista_main* actual = lista->despues;
-  for(int i=1;i<cantidad;i++){
-    lista_main* nuevo = new lista_main*(generar(rango));
+  for(int i=1;i<=cantidad;i++){
+    lista_main* nuevo = new lista_main(generar(rango));
     lista_main* actual=nuevo;
     cout<<actual->valor<<" ";
     actual=actual->despues;
   }
 }
-
+float calcular_belleza(lista_main* &lista){
+  float belleza=0;
+  lista_main* actual= lista;
+  while(actual->despues->despues!=nullptr){
+    belleza-= actual->valor;
+    belleza+= actual->despues->valor;
+    actual=actual->despues->despues;
+  }
+  if(actual->despues!=nullptr){
+    belleza-=actual->despues->valor;
+  }
+  belleza+=actual->valor;
+  return belleza;
+}
 int main(int argv,char* argc[]){
   if(argv!=3){
     return 0;  
@@ -47,8 +60,9 @@ int main(int argv,char* argc[]){
   estructural siu;
   siu.lista=lista;
   agregar_valores(siu.lista,rango,cantidad);
-  siu.belleza=0;
+  siu.belleza=calcular_belleza(siu.lista);
   liberarNodos(siu.lista);
+  
   return 0;
 }
 
